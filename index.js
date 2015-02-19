@@ -28,7 +28,7 @@ function start() {
 
 			var frame = fCLI.frameDialog(name, frameNo);
 
-			console.log(JSON.stringify(frame));
+			player.addToFrames(frame);
 		}
 	}
 

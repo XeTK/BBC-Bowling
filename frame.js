@@ -2,17 +2,20 @@
 var FRAME_NUMER_OF_PINS = 10;
 var LAST_FRAME_NUMBER   = 10;
 
-function Frame(frameNum, shotOne, shotTwo, shotThree) {
-	this.frameNum = frameNuml;
+function Frame(frameNum, frameScores) {
+	this.frameNumber = frameNum;
 
-	this.shotOne   = shotOne;
-	this.shotTwo   = shotTwo;
+	this.shotOne = frameScores['one'];
+	this.shotTwo = frameScores['two'];
 
 	if (this.frameNum >= LAST_FRAME_NUMBER)
-		this.shotThree = shotThree; 
+		this.shotThree = frameScores['three']; 
 
 	this.returnScore = function() {
 		var subTotal = (this.shotOne + this.shotTwo);
+
+		if (this.frameNum >= LAST_FRAME_NUMBER)
+			subTotal += this.shotThree; 
 
 		return Number(subTotal);
 	}

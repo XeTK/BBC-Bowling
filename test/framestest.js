@@ -14,7 +14,12 @@ describe(
     				'The first number should be the same.', 
     				function(){
 
-    					var tempF = new Frame(1, 2);
+              var frame = {
+                "one": 1,
+                "two": 2
+              };
+
+    					var tempF = new Frame(1, frame);
 
     					assert.equal(1, tempF.shotOne);
     				}
@@ -29,7 +34,12 @@ describe(
     				'The second number should be the same.', 
     				function(){
 
-    					var tempF = new Frame(1, 2);
+              var frame = {
+                "one": 1,
+                "two": 2
+              };
+
+    					var tempF = new Frame(1, frame);
 
     					assert.equal(2, tempF.shotTwo);
     				}
@@ -44,7 +54,12 @@ describe(
     				'Total of both shots should be 9.', 
     				function(){
 
-    					var tempF = new Frame(4, 5);
+              var frame = {
+                "one": 4,
+                "two": 5
+              };
+
+    					var tempF = new Frame(1, frame);
 
     					assert.equal(9, tempF.returnScore());
     				}
@@ -58,7 +73,12 @@ describe(
   				it(
     				'The frame resulted in a strike', 
     				function(){
-    					var tempF = new Frame(10);
+
+              var frame = {
+                "one": 10
+              };
+
+    					var tempF = new Frame(1, frame);
 
     					assert.equal(true, tempF.isStrike());
     				}
@@ -72,7 +92,11 @@ describe(
   				it(
     				'The frame resulted in a not strike', 
     				function(){
-    					var tempF = new Frame(9,0);
+              var frame = {
+                "one": 9,
+                "two": 0
+              };
+    					var tempF = new Frame(1, frame);
 
     					assert.equal(false, tempF.isStrike());
     				}
@@ -86,7 +110,12 @@ describe(
   				it(
     				'The frame resulted in a spare', 
     				function(){
-    					var tempF = new Frame(4, 6);
+              var frame = {
+                "one": 1,
+                "two": 10
+              };
+
+    					var tempF = new Frame(1, frame);
 
     					assert.equal(true, tempF.isSpare());
     				}
@@ -100,7 +129,12 @@ describe(
   				it(
     				'The frame resulted in a not spare', 
     				function(){
-    					var tempF = new Frame(4,4);
+
+              var frame = {
+                "one": 4,
+                "two": 4
+              };
+    					var tempF = new Frame(1, frame);
 
     					assert.equal(false, tempF.isSpare());
     				}

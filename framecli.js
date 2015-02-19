@@ -21,7 +21,9 @@ function frameDialog(name, frameNo) {
 	if ((frame['one'] >= FRAME_NUMER_OF_PINS || frame['two'] >= FRAME_NUMER_OF_PINS) && frameNo == LAST_FRAME_NUMBER)
 		frame['three'] = validPrompt('Go number 3: ');
 
-	return frame;
+	var tFrame = new Frame(frameNo, frame);	
+
+	return tFrame;
 }
 
 function validPrompt(msg) {
