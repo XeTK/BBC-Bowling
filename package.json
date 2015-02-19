@@ -4,10 +4,12 @@
   "description": "This is the test for the bbc assessment center",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha"
   },
   "author": "Tom Rosier",
   "license": "MIT",
   "dependencies": {
+    "sync-prompt": "^0.4.1"
   }
 }

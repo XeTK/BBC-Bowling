@@ -1,15 +1,6 @@
 
 var FRAME_SIZE = 10;
 
-function Person(name) {
-	this.name        = name;
-	this.framesStack = new Array();
-
-	this.addToFrames = function(frame) {
-		this.framesStack.push(frame);
-	}
-}
-
 function Frame(shotOne, shotTwo) {
 	this.shotOne = shotOne;
 	this.shotTwo = shotTwo;
@@ -31,5 +22,4 @@ function Frame(shotOne, shotTwo) {
 	}
 }
 
-exports.Frame  = Frame;
-exports.Person = Person;
+module.exports = Frame;

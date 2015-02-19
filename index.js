@@ -1,17 +1,26 @@
-var dataStructures = require('./datastrucutres');
 
-var person = dataStructures.Person;
-var frame  = dataStructures.Frame;
+var Frame  = require('./frame');
+var CLI    = require('./cli');
 
-console.log('Starting Bowling application.');
-
-var roy = new person('roy');
-
+/*
 for (var i = 0; i < 10; i++) {
-	var tempf = new frame(i, (i * 2));
+	var tempf = new Frame(i, (i * 2));
 	roy.addToFrames(tempf);
 }
+*/
 
-console.log(JSON.stringify(roy));
+function start() {
+	console.log('Starting Bowling application.');
 
-console.log('Exiting application.');
+
+	var players = CLI.getPlayers();	
+
+
+
+	console.log(JSON.stringify(players));
+
+
+	console.log('Exiting application.');
+}
+
+start();
