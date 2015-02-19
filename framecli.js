@@ -1,4 +1,5 @@
-var prompt = require('sync-prompt');
+var prompt  = require('sync-prompt');
+var colours = require('colors');
 
 var Frame  = require('./frame');
 
@@ -9,7 +10,7 @@ var LAST_FRAME_NUMBER   = 10;
 
 function frameDialog(name, frameNo) {
 
-	console.log('Please enter the points for player ' + name + ' on frame ' + frameNo + '.');
+	console.log('Please enter the points for player ' + name.blue + ' on frame ' + String(frameNo).green + '.');
 
 	var frame = new Object();
 
@@ -27,15 +28,16 @@ function frameDialog(name, frameNo) {
 }
 
 function validPrompt(msg) {
+	
 	var ret = -1;
 
 	while (true) {
-		ret = prompt(msg);
+		ret = prompt(msg.yellow);
 
-		if (ret <= FRAME_NUMER_OF_PINS && ret > -1) {
+		if (ret.length > 0 && ret <= FRAME_NUMER_OF_PINS && ret > -1) {
 			break;
 		} else {
-			console.log('Please enter a value between 0 and ' + FRAME_NUMER_OF_PINS + '.');
+			console.log(('Please enter a value between 0 and ' + FRAME_NUMER_OF_PINS + '.').red);
 		}
 	}
 

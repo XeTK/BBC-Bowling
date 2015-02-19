@@ -2,31 +2,22 @@
 var pCLI = require('./playercli');
 var fCLI = require('./framecli');
 
-var FRAME_NUMER_OF_PINS = 10;
-var LAST_FRAME_NUMBER   = 10;
-
-/*
-for (var i = 0; i < 10; i++) {
-	var tempf = new Frame(i, (i * 2));
-	roy.addToFrames(tempf);
-}
-*/
+var LAST_FRAME_NUMBER = 10;
 
 function start() {
+	
 	console.log('Starting Bowling application.');
 
 	var players = pCLI.getPlayers();	
 
 	for (var i = 0; i < LAST_FRAME_NUMBER; i++) {
 
-		var frameNo = i + 1;
+		var frameNumber = i + 1;
 
 		for (var playersName in players) {
 			var player = players[playersName];
 
-			var name = player.name;
-
-			var frame = fCLI.frameDialog(name, frameNo);
+			var frame = fCLI.frameDialog(player.name, frameNumber);
 
 			player.addToFrames(frame);
 		}

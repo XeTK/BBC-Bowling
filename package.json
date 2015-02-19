@@ -10,6 +10,7 @@
   "author": "Tom Rosier",
   "license": "MIT",
   "dependencies": {
+    "colors": "^1.0.3",
     "sync-prompt": "^0.4.1"
   }
 }
