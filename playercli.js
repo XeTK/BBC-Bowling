@@ -14,7 +14,6 @@ function requestNumberOfUsers() {
 	// Add Validation.
 
 	return Number(numOfPlayers);
-
 }
 
 function requestPlayersName() {
@@ -50,9 +49,9 @@ function getPlayers() {
 			break;
 
 		} else if (numOfPlayers <= 0) {
-			console.log('Please enter a value between 1 - ' + MAX_PLAYERS);
+			console.log('Please enter a value between 1 - ' + MAX_PLAYERS + '.');
 		} else {
-			console.log('You have exceeded the maximum number of players which is ' + MAX_PLAYERS + ', please enter a number of players less than ' + MAX_PLAYERS);
+			console.log('You have exceeded the maximum number of players which is ' + MAX_PLAYERS + ', please enter a number of players less than ' + MAX_PLAYERS + '.');
 		}
 	}
 
@@ -76,4 +75,4 @@ function createPlayersObjects(playersNames) {
 	return players;
 }
 
-module.exports.getPlayers = getPlayers;
+module.exports.getPlayers  = getPlayers;

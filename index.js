@@ -1,6 +1,9 @@
 
-var Frame  = require('./frame');
-var CLI    = require('./cli');
+var pCLI = require('./playercli');
+var fCLI = require('./framecli');
+
+var FRAME_NUMER_OF_PINS = 10;
+var LAST_FRAME_NUMBER   = 10;
 
 /*
 for (var i = 0; i < 10; i++) {
@@ -12,7 +15,22 @@ for (var i = 0; i < 10; i++) {
 function start() {
 	console.log('Starting Bowling application.');
 
-	var players = CLI.getPlayers();	
+	var players = pCLI.getPlayers();	
+
+	for (var i = 0; i < LAST_FRAME_NUMBER; i++) {
+
+		var frameNo = i + 1;
+
+		for (var playersName in players) {
+			var player = players[playersName];
+
+			var name = player.name;
+
+			var frame = fCLI.frameDialog(name, frameNo);
+
+			console.log(JSON.stringify(frame));
+		}
+	}
 
 	console.log(JSON.stringify(players));
 
