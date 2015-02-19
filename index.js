@@ -12,13 +12,9 @@ for (var i = 0; i < 10; i++) {
 function start() {
 	console.log('Starting Bowling application.');
 
-
 	var players = CLI.getPlayers();	
 
-
-
 	console.log(JSON.stringify(players));
-
 
 	console.log('Exiting application.');
 }
