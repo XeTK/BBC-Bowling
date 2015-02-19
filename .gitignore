@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-node_modules
 .DS_Store
-*.log
-=======
+
 # Logs
 logs
 *.log
@@ -31,4 +28,3 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
->>>>>>> 4e23cb2a103be5643bf0992965a91112210708b3
