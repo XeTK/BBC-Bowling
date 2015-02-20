@@ -11,6 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "colors": "^1.0.3",
-    "sync-prompt": "^0.4.1"
+    "readline-sync": "^0.5.6"
   }
 }

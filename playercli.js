@@ -1,10 +1,10 @@
 
-var prompt  = require('sync-prompt');
+var prompt  = require('readline-sync');
 var colours = require('colors');
 
 var Person = require('./person');
 
-prompt = prompt.prompt;
+prompt = prompt.question;
 
 var MAX_PLAYERS = 6;
 

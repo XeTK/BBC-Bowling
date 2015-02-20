@@ -1,9 +1,9 @@
-var prompt  = require('sync-prompt');
+var prompt  = require('readline-sync');
 var colours = require('colors');
 
 var Frame  = require('./frame');
 
-prompt = prompt.prompt;
+prompt = prompt.question;
 
 var FRAME_NUMER_OF_PINS = 10;
 var LAST_FRAME_NUMBER   = 10;
@@ -32,6 +32,7 @@ function validPrompt(msg) {
 	var ret = -1;
 
 	while (true) {
+
 		ret = prompt(msg.yellow);
 
 		if (ret.length > 0 && ret <= FRAME_NUMER_OF_PINS && ret > -1) {
