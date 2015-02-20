@@ -23,7 +23,19 @@ function start() {
 		}
 	}
 
-	console.log(JSON.stringify(players));
+	players.sort(
+		function(a,b) {
+			return a.totalScore() - b.totalScore();
+		}
+	);
+
+	for (var playersName in players) {
+		var player = players[playersName];
+
+		var score = player.totalScore();
+
+		console.log(player + ': ' + score);
+	}
 
 	console.log('Exiting application.');
 }

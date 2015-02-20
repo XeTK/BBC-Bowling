@@ -10,49 +10,56 @@ var MAX_PLAYERS = 6;
 
 function requestNumberOfUsers() {
 
-	var numOfPlayers = prompt('Please enter the number of players: '.yellow);
+	var numOfPlayers = -1;
 
-	// Add Validation.
+	while(true) {
+
+		numOfPlayers = prompt('Please enter the number of players: '.yellow);
+
+		if (numOfPlayers <= MAX_PLAYERS && numOfPlayers > 0) {
+			break;
+		} else if (numOfPlayers <= 0) {
+			console.log(('Please enter a value between 1 - ' + MAX_PLAYERS + '.').red);
+		} else {
+			console.log(('You have exceeded the maximum number of players which is ' + MAX_PLAYERS + ', please enter a number of players less than ' + MAX_PLAYERS + '.').red);
+		}
+
+	}
 
 	return Number(numOfPlayers);
 }
 
 function requestPlayersName() {
 
-	var playersName = prompt('Please enter the players name: '.yellow);
+	var playersName = '';
 
-	// Add Validation.
+	while(true) {
+		playersName = prompt('Please enter the players name: '.yellow);
 
-	return playersName;
+		if (playersName.length > 0) {
+			break;
+		} else {
+			console.log('Please enter a name'.red);
+		}
+	} 
+
+	return String(playersName);
 }
 
 function getPlayers() {
 
-	while(true) {
+	var numOfPlayers = requestNumberOfUsers();
 
-		var numOfPlayers = requestNumberOfUsers();
+	var names = new Array();
 
-		if (numOfPlayers <= MAX_PLAYERS && numOfPlayers > 0) {
+	for (var i = 0; i < numOfPlayers; i++) {
+		var name = requestPlayersName();
 
-			var names = new Array();
-
-			for (var i = 0; i < numOfPlayers; i++) {
-				var name = requestPlayersName();
-
-				if (names.indexOf(name) > -1) {
-					console.log('This name has already been taken'.red);
-					i--;
-				} else {
-					names.push(name);
-				}
-			}
-
-			break;
-
-		} else if (numOfPlayers <= 0) {
-			console.log(('Please enter a value between 1 - ' + MAX_PLAYERS + '.').red);
+		if (names.indexOf(name) > -1) {
+			console.log('This name has already been taken'.red);
+			i--;
 		} else {
-			console.log(('You have exceeded the maximum number of players which is ' + MAX_PLAYERS + ', please enter a number of players less than ' + MAX_PLAYERS + '.').red);
+			names.push(name);
 		}
 	}
 
@@ -77,4 +84,4 @@ function createPlayersObjects(playersNames) {
 	return players;
 }
 
-module.exports.getPlayers  = getPlayers;
+module.exports.getPlayers = getPlayers;

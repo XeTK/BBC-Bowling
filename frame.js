@@ -12,10 +12,14 @@ function Frame(frameNum, frameScores) {
 		this.shotThree = frameScores['three']; 
 
 	this.returnScore = function() {
-		var subTotal = (this.shotOne + this.shotTwo);
+		var subTotal = this.shotOne;
+
+		if (this.shotTwo)
+			subTotal += this.shotTwo;
 
 		if (this.frameNum >= LAST_FRAME_NUMBER)
-			subTotal += this.shotThree; 
+			if (this.shotThree)
+				subTotal += this.shotThree; 
 
 		return Number(subTotal);
 	}
