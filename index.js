@@ -1,6 +1,7 @@
 
-var pCLI = require('./playercli');
-var fCLI = require('./framecli');
+var pCLI   = require('./playercli');
+var fCLI   = require('./framecli');
+var sBoard = require('./scoreboard');
 
 var LAST_FRAME_NUMBER = 10;
 
@@ -23,19 +24,7 @@ function start() {
 		}
 	}
 
-	players.sort(
-		function(a,b) {
-			return a.totalScore() - b.totalScore();
-		}
-	);
-
-	for (var playersName in players) {
-		var player = players[playersName];
-
-		var score = player.totalScore();
-
-		console.log(player + ': ' + score);
-	}
+	sBoard.print(players);
 
 	console.log('Exiting application.');
 }
