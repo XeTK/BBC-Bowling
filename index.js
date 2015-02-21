@@ -41,4 +41,5 @@ function start() {
 
 }
 
+// Start the execution of the application.
 start();
