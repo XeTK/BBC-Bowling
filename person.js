@@ -1,5 +1,5 @@
 /*
- * This object that holds any information that is todo with a person.
+ * This object that holds any information that is to do with a person.
  */
  
 // This is constants for the game of bowling.
@@ -93,7 +93,7 @@ function Person(name) {
 					// If its a valid object then continue.
 					if (shotTwo) {
 						
-						// If the shot is a strike aswell, then we total the final shot.
+						// If the shot is a strike as well, then we total the final shot.
 						if (frame.shotTwo == FRAME_NUMER_OF_PINS) {
 
 							// Get the object so its easy to access.
